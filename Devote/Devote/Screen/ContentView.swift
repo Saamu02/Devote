@@ -88,7 +88,6 @@ struct ContentView: View {
                     .padding()
                     .foregroundStyle(.white)
                     
-                    
                     Spacer(minLength: 80)
                     
                     // MARK: - NEW TASK BUTTON
@@ -116,23 +115,7 @@ struct ContentView: View {
                     List {
                         
                         ForEach(items) { item in
-                            
-                            NavigationLink {
-                                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                                
-                            } label: {
-                                
-                                VStack(alignment: .leading) {
-                                    
-                                    Text(item.task ?? "")
-                                        .font(.headline)
-                                        .fontWeight(.bold)
-                                    
-                                    Text(item.timestamp!, formatter: itemFormatter)
-                                        .font(.footnote)
-                                        .foregroundStyle(.gray)
-                                }
-                            }
+                            ListRowItemView(item: item)
                         }
                         .onDelete(perform: deleteItems)
                     } //: LIST
@@ -142,11 +125,16 @@ struct ContentView: View {
                     .padding(.vertical, 0)
                     .frame(maxWidth: 640)
                 } //: VSTACK
-                
+                .blur(radius: showNewTaskItem ? 8.0 : 0, opaque: false)
+                .animation(.easeOut(duration: 0.5), value: showNewTaskItem)
+                .transition(.move(edge: .bottom))
+
                 // MARK: - NEW TASK ITEM
                 
                 if showNewTaskItem {
-                    BlankView()
+                    BlankView(
+                        backgroundColor: isDarkMode ? .black : .gray,
+                        backgroundOpacity: isDarkMode ? 0.3 : 0.5)
                         .onTapGesture {
                             withAnimation {
                                 showNewTaskItem = false
@@ -160,6 +148,7 @@ struct ContentView: View {
             .toolbar(.hidden )
             .background(
                 BackgroundImageView()
+                    .blur(radius: showNewTaskItem ? 8.0 : 0, opaque: false)
             )
             .background(
                 backgroundGradient
