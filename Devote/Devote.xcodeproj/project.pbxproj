@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04476DB92C332F6000E2B714 /* CheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04476DB82C332F6000E2B714 /* CheckboxStyle.swift */; };
+		0464BBAE2C333CB600BE8D08 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464BBAD2C333CB600BE8D08 /* SoundPlayer.swift */; };
 		04CBC6D62C323D2200B8CCB9 /* DevoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC6D52C323D2200B8CCB9 /* DevoteApp.swift */; };
 		04CBC6D82C323D2200B8CCB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC6D72C323D2200B8CCB9 /* ContentView.swift */; };
 		04CBC6DA2C323D2400B8CCB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CBC6D92C323D2400B8CCB9 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		04476DB82C332F6000E2B714 /* CheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxStyle.swift; sourceTree = "<group>"; };
+		0464BBAD2C333CB600BE8D08 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		04CBC6D22C323D2200B8CCB9 /* Devote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Devote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CBC6D52C323D2200B8CCB9 /* DevoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevoteApp.swift; sourceTree = "<group>"; };
 		04CBC6D72C323D2200B8CCB9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				04CBC6F72C3246AD00B8CCB9 /* Constant.swift */,
+				0464BBAD2C333CB600BE8D08 /* SoundPlayer.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				04CBC7032C32D68900B8CCB9 /* ListRowItemView.swift in Sources */,
 				04CBC6FE2C32AE2600B8CCB9 /* NewTaskItemView.swift in Sources */,
+				0464BBAE2C333CB600BE8D08 /* SoundPlayer.swift in Sources */,
 				04CBC6FC2C32AD2B00B8CCB9 /* BackgroundImageView.swift in Sources */,
 				04476DB92C332F6000E2B714 /* CheckboxStyle.swift in Sources */,
 				04CBC6DF2C323D2400B8CCB9 /* Persistence.swift in Sources */,

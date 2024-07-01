@@ -76,6 +76,8 @@ struct ContentView: View {
                         
                         Button(action: {
                             isDarkMode.toggle()
+                            playSound(sound: "sound-tap", type: "mp3")
+                            hapticFeedBack.notificationOccurred(.success)
                             
                         }, label: {
                             Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
@@ -94,6 +96,8 @@ struct ContentView: View {
                     
                     Button(action: {
                         showNewTaskItem = true
+                        playSound(sound: "sound-ding", type: "mp3")
+                        hapticFeedBack.notificationOccurred(.success)
                         
                     }, label: {
                         Image(systemName: "plus.circle")
