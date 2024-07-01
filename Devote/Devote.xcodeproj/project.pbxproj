@@ -19,6 +19,7 @@
 		04CBC6F82C3246AD00B8CCB9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC6F72C3246AD00B8CCB9 /* Constant.swift */; };
 		04CBC6FC2C32AD2B00B8CCB9 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC6FB2C32AD2B00B8CCB9 /* BackgroundImageView.swift */; };
 		04CBC6FE2C32AE2600B8CCB9 /* NewTaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC6FD2C32AE2600B8CCB9 /* NewTaskItemView.swift */; };
+		04CBC7012C32C75800B8CCB9 /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC7002C32C75800B8CCB9 /* BlankView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		04CBC6F72C3246AD00B8CCB9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		04CBC6FB2C32AD2B00B8CCB9 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		04CBC6FD2C32AE2600B8CCB9 /* NewTaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskItemView.swift; sourceTree = "<group>"; };
+		04CBC7002C32C75800B8CCB9 /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				04CBC6FB2C32AD2B00B8CCB9 /* BackgroundImageView.swift */,
 				04CBC6FD2C32AE2600B8CCB9 /* NewTaskItemView.swift */,
+				04CBC7002C32C75800B8CCB9 /* BlankView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				04CBC6DF2C323D2400B8CCB9 /* Persistence.swift in Sources */,
 				04CBC6D82C323D2200B8CCB9 /* ContentView.swift in Sources */,
 				04CBC6F82C3246AD00B8CCB9 /* Constant.swift in Sources */,
+				04CBC7012C32C75800B8CCB9 /* BlankView.swift in Sources */,
 				04CBC6E22C323D2400B8CCB9 /* Devote.xcdatamodeld in Sources */,
 				04CBC6D62C323D2200B8CCB9 /* DevoteApp.swift in Sources */,
 			);

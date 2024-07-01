@@ -11,14 +11,11 @@ import CoreData
 struct ContentView: View {
     
     // MARK: - PROPERTY
-    @State private var task: String = ""
+    @AppStorage("isDarkMode") private var isDarkMode = false
     
-    private var isButtonDisabled: Bool {
-        task.isEmpty
-    }
-    
-    @FocusState private var taskTextFieldFocused: Bool
-    
+    @State private var task = ""
+    @State private var showNewTaskItem = false
+        
     // MARK: FETCH DATA
     @Environment(\.managedObjectContext) private var viewContext
     
@@ -29,27 +26,6 @@ struct ContentView: View {
     
     
     // MARK: - FUNCTIONS
-    private func addItem() {
-        
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-            newItem.task = task
-            newItem.completion = false
-            newItem.id = UUID()
-            
-            do {
-                try viewContext.save()
-                
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-            
-            task = ""
-            taskTextFieldFocused = false
-        }
-    }
     
     private func deleteItems(offsets: IndexSet) {
         
@@ -74,38 +50,69 @@ struct ContentView: View {
             ZStack {
                 VStack {
                     
-                    VStack(spacing: 16) {
+                    // MARK: - HEADER
+                    HStack(spacing: 20) {
                         
-                        TextField("New Task", text: $task)
-                            .padding()
+                        // TITLE
+                        Text("Devote")
+                            .font(.system(.largeTitle, design: .rounded))
+                            .fontWeight(.heavy)
+                            .padding(.leading, 4)
+                        
+                        Spacer()
+                        
+                        
+                        // EDIT BUTTON
+                        EditButton()
+                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+                            .padding(.horizontal, 10)
+                            .frame(minWidth: 70, minHeight: 24)
                             .background(
-                                Color(.systemGray6)
+                                Capsule()
+                                    .stroke(.white , lineWidth: 2)
                             )
-                            .clipShape(
-                                RoundedRectangle(cornerRadius: 10)
-                            )
-                            .focused($taskTextFieldFocused)
+                        
+                        // APPEARENCE BUTTON
                         
                         Button(action: {
-                            addItem()
+                            isDarkMode.toggle()
                             
                         }, label: {
-                            Spacer()
-                            Text("SAVE")
-                            Spacer()
+                            Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .font(.system(.title, design: .rounded))
                         })
-                        .disabled(isButtonDisabled)
-                        .padding()
-                        .font(.footnote)
-                        .foregroundStyle(.white)
-                        .background(isButtonDisabled ? Color.gray : Color.pink)
-                        .clipShape(
-                            RoundedRectangle(cornerRadius: 10)
-                        )
-                        
-                    } //: VSTACK
+                      
+                    }//: HSTACK
                     .padding()
+                    .foregroundStyle(.white)
                     
+                    
+                    Spacer(minLength: 80)
+                    
+                    // MARK: - NEW TASK BUTTON
+                    
+                    Button(action: {
+                        showNewTaskItem = true
+                        
+                    }, label: {
+                        Image(systemName: "plus.circle")
+                            .font(.system(size: 30, weight: .semibold, design: .rounded))
+                        
+                        Text("New Task")
+                            .font(.system(size: 24, weight: .bold, design: .rounded))
+                    })
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 15)
+                    .background(
+                        LinearGradient(colors: [.pink, .blue], startPoint: .leading, endPoint: .trailing)
+                            .clipShape(.capsule )
+                    )
+                    .shadow(color: .black.opacity(0.25), radius: 8, x: 0, y: 4)
+                    
+                    // MARK: - TASKS
                     List {
                         
                         ForEach(items) { item in
@@ -135,14 +142,22 @@ struct ContentView: View {
                     .padding(.vertical, 0)
                     .frame(maxWidth: 640)
                 } //: VSTACK
+                
+                // MARK: - NEW TASK ITEM
+                
+                if showNewTaskItem {
+                    BlankView()
+                        .onTapGesture {
+                            withAnimation {
+                                showNewTaskItem = false
+                            }
+                        }
+                    NewTaskItemView(isShowing: $showNewTaskItem)
+                }
             }
             .navigationTitle("Daily Tasks")
             .navigationBarTitleDisplayMode(.large)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing ) {
-                    EditButton()
-                }
-            }//: TOOLBAR
+            .toolbar(.hidden )
             .background(
                 BackgroundImageView()
             )
