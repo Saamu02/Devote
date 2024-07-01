@@ -16,6 +16,9 @@
 		04CBC6EC2C323E4F00B8CCB9 /* sound-ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04CBC6E82C323E4F00B8CCB9 /* sound-ding.mp3 */; };
 		04CBC6ED2C323E4F00B8CCB9 /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04CBC6E92C323E4F00B8CCB9 /* sound-rise.mp3 */; };
 		04CBC6EE2C323E4F00B8CCB9 /* sound-tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04CBC6EA2C323E4F00B8CCB9 /* sound-tap.mp3 */; };
+		04CBC6F82C3246AD00B8CCB9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC6F72C3246AD00B8CCB9 /* Constant.swift */; };
+		04CBC6FC2C32AD2B00B8CCB9 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC6FB2C32AD2B00B8CCB9 /* BackgroundImageView.swift */; };
+		04CBC6FE2C32AE2600B8CCB9 /* NewTaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC6FD2C32AE2600B8CCB9 /* NewTaskItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		04CBC6E92C323E4F00B8CCB9 /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-rise.mp3"; sourceTree = "<group>"; };
 		04CBC6EA2C323E4F00B8CCB9 /* sound-tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-tap.mp3"; sourceTree = "<group>"; };
 		04CBC6F52C323F3A00B8CCB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		04CBC6F72C3246AD00B8CCB9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		04CBC6FB2C32AD2B00B8CCB9 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
+		04CBC6FD2C32AE2600B8CCB9 /* NewTaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 		04CBC6F32C323ED200B8CCB9 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				04CBC6F72C3246AD00B8CCB9 /* Constant.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -136,6 +143,8 @@
 		04CBC6F62C323F6400B8CCB9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04CBC6FB2C32AD2B00B8CCB9 /* BackgroundImageView.swift */,
+				04CBC6FD2C32AE2600B8CCB9 /* NewTaskItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -213,8 +222,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04CBC6FE2C32AE2600B8CCB9 /* NewTaskItemView.swift in Sources */,
+				04CBC6FC2C32AD2B00B8CCB9 /* BackgroundImageView.swift in Sources */,
 				04CBC6DF2C323D2400B8CCB9 /* Persistence.swift in Sources */,
 				04CBC6D82C323D2200B8CCB9 /* ContentView.swift in Sources */,
+				04CBC6F82C3246AD00B8CCB9 /* Constant.swift in Sources */,
 				04CBC6E22C323D2400B8CCB9 /* Devote.xcdatamodeld in Sources */,
 				04CBC6D62C323D2200B8CCB9 /* DevoteApp.swift in Sources */,
 			);
