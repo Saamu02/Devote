@@ -1,5 +1,5 @@
 # Devote
-App 7: App develop in SwiftUI
+App 7: App develop in SwfitUI for iOS with the static widget UI
 
 
 # Learning Points:
