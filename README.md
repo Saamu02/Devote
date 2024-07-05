@@ -2,7 +2,7 @@
 App 7: App develop in SwfitUI for iOS with the static widget UI
 
 
-# Learning Points:
+# Important Points:
 - Integrating CoreData with SwiftUI
 - Use of focus state property wrapper to control the keyboard
 - Use of binding property wrapper
